@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Ajouter Destination</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <style>
+       
+    </style>
 </head>
 
 
@@ -25,7 +28,7 @@
     </div>
 
     <div class="container">
-        <form>
+        <form action="#" method="post">
             <div class="row form-group justify-content-center">
                 <label for="inputContinent" class="col-form-label col-sm-2">Continent:</label>
                 <div class="col-sm-4">
@@ -43,14 +46,14 @@
             <div class="row form-group justify-content-center">
                 <label for="inputRegion" class="col-form-label col-sm-2">Région:</label>
                 <div class="col-sm-4">
-                    <input class="form-control" name="Région" id="inputRegion" type="text" placeholder="Région" required />
+                    <input class="form-control" name="Region" id="inputRegion" type="text" placeholder="Région" required />
                 </div>
             </div>
 
             <div class="row form-group justify-content-center">
-                <label for="inputDescription" class="col-form-label col-sm-2">Déscription:</label>
+                <label for="inputDescription" class="col-form-label col-sm-2">Description:</label>
                 <div class="col-sm-4">
-                    <textarea class="form-control" name="Déscription" id="inputDescription" type="text" placeholder="Déscription" rows="3" required></textarea>
+                    <textarea class="form-control" name="Description" id="inputDescription" type="text" placeholder="Description" rows="3" required></textarea>
                 </div>
             </div>
 
@@ -59,9 +62,12 @@
                     <button type="submit" class="btn btn-outline-info btn-lg btn-block">Ajouter</button>
                 </div>
             </div>
+
+            <div id="json"></div>
       
 
         </form>
+        
     </div>
 
     <script src="bootstrap/jquery/jquery-3.3.1.min.js"></script>
@@ -83,19 +89,26 @@
                             o[this.name] = this.value || '';
                         }
                     });
+                    $.each(a, function (i, field) {
+                        $("#json").append(field.name + ":" + field.value + " ");
+                    });
                     return o;
                 };
             })(jQuery);
 
             $('form').submit(function (e) {
-                e.preventDefault();
                 var data = $(this).serializeFormJSON();
                 console.log(data);
                 $.post("http://localhost:13178/api/destinations", data);
+               
+                
+                e.preventDefault();
             });
         });
 
     </script>
+
+    
 
 </body>
 </html>

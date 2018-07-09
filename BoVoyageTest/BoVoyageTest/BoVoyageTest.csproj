@@ -103,6 +103,7 @@
     <Content Include="Html\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Html\bootstrap\js\bootstrap.js" />
     <Content Include="Html\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Html\AfficherDestinations.html" />
     <Content Include="Html\FormAjoutDestination.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -113,9 +114,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807081722026_Init.cs" />
-    <Compile Include="Migrations\201807081722026_Init.Designer.cs">
-      <DependentUpon>201807081722026_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201807090910484_BaseLocale.cs" />
+    <Compile Include="Migrations\201807090910484_BaseLocale.Designer.cs">
+      <DependentUpon>201807090910484_BaseLocale.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Destination.cs" />
@@ -140,10 +141,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807081722026_Init.resx">
-      <DependentUpon>201807081722026_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807090910484_BaseLocale.resx">
+      <DependentUpon>201807090910484_BaseLocale.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
